@@ -4,21 +4,22 @@ import java.time.Instant;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.devjoliveira.swmdb.dto.CustomError;
 import com.devjoliveira.swmdb.services.exceptions.ResourceNotFoundException;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 @ControllerAdvice
 public class ControllerExceptionHandler {
 
+    // Here chagen HttpServletRequest to ServerHttpRequest if using WebFlux
+    // and request.getRequestURI() instead of request.getURI().toString()
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<CustomError> resourceNotFound(ResourceNotFoundException e, HttpServletRequest request) {
+    public ResponseEntity<CustomError> resourceNotFound(ResourceNotFoundException e, ServerHttpRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
-        CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
+        CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getURI().toString());
         return ResponseEntity.status(status).body(err);
     }
 
