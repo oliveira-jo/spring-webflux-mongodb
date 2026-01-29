@@ -7,15 +7,14 @@
 
 ### Container Docker do MongoDB for developing
 ```
-docker run -d -p 27017:27017 -v /data/db --name mongo1 mongo:4.4.3-bionic
+docker run -d -p 27017:27017 -v /data/db --name spring-webflux-mongodb mongo:4.4.3-bionic
 ```
 
 ```
 docker exec -it mongo1 bash
 ```
 
-### Interace to work with Mongo
->  *MongoDB Compass* 
+> Interace to work with Mongo:  *MongoDB Compass* 
 
 ## Postman Collection and Environment:
 (download from the main folder of this repository, then import it into your Postman)

@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.dto;
+package com.devjoliveira.swmdb.dto;
 
 public class AuthorDTO {
 

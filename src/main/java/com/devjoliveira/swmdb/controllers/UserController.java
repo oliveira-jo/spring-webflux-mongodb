@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.controllers;
+package com.devjoliveira.swmdb.controllers;
 
 import java.net.URI;
 import java.util.List;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.devjoliveira.workshopmongo.dto.PostDTO;
-import com.devjoliveira.workshopmongo.dto.UserDTO;
-import com.devjoliveira.workshopmongo.services.UserService;
+import com.devjoliveira.swmdb.dto.PostDTO;
+import com.devjoliveira.swmdb.dto.UserDTO;
+import com.devjoliveira.swmdb.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")

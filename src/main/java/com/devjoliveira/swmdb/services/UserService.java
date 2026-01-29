@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.services;
+package com.devjoliveira.swmdb.services;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devjoliveira.workshopmongo.dto.PostDTO;
-import com.devjoliveira.workshopmongo.dto.UserDTO;
-import com.devjoliveira.workshopmongo.entities.User;
-import com.devjoliveira.workshopmongo.repositories.UserRepository;
-import com.devjoliveira.workshopmongo.services.exceptions.ResourceNotFoundException;
+import com.devjoliveira.swmdb.dto.PostDTO;
+import com.devjoliveira.swmdb.dto.UserDTO;
+import com.devjoliveira.swmdb.entities.User;
+import com.devjoliveira.swmdb.repositories.UserRepository;
+import com.devjoliveira.swmdb.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserService {

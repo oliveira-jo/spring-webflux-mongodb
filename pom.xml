@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.devsuperior</groupId>
-	<artifactId>workshopmongo</artifactId>
+	<artifactId>spring-webflux-mongodb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>workshopmongo</name>
-	<description>Base project workshop mongoDB</description>
+	<name>spring-webflux-mongodb</name>
+	<description>Base project webflux with mongoDB</description>
 	<url/>
 	<licenses>
 		<license/>

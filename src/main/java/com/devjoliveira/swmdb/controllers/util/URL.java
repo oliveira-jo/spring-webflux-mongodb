@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.controllers.util;
+package com.devjoliveira.swmdb.controllers.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.config;
+package com.devjoliveira.swmdb.config;
 
 import java.time.Instant;
 import java.util.Arrays;
@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import com.devjoliveira.workshopmongo.entities.Post;
-import com.devjoliveira.workshopmongo.entities.User;
-import com.devjoliveira.workshopmongo.repositories.PostRepository;
-import com.devjoliveira.workshopmongo.repositories.UserRepository;
+import com.devjoliveira.swmdb.entities.Post;
+import com.devjoliveira.swmdb.entities.User;
+import com.devjoliveira.swmdb.repositories.PostRepository;
+import com.devjoliveira.swmdb.repositories.UserRepository;
 
 @Configuration
 public class SeedingDatabase implements CommandLineRunner {

@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.controllers;
+package com.devjoliveira.swmdb.controllers;
 
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devjoliveira.workshopmongo.controllers.util.URL;
-import com.devjoliveira.workshopmongo.dto.PostDTO;
-import com.devjoliveira.workshopmongo.services.PostService;
+import com.devjoliveira.swmdb.controllers.util.URL;
+import com.devjoliveira.swmdb.dto.PostDTO;
+import com.devjoliveira.swmdb.services.PostService;
 
 @RestController
 @RequestMapping(value = "/posts")

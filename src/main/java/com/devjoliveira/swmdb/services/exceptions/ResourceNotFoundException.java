@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.services.exceptions;
+package com.devjoliveira.swmdb.services.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
     private static final long serialVersionUID = 1L;

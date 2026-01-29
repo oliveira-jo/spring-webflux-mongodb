@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.controllers.handlers;
+package com.devjoliveira.swmdb.controllers.handlers;
 
 import java.time.Instant;
 
@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.devjoliveira.workshopmongo.dto.CustomError;
-import com.devjoliveira.workshopmongo.services.exceptions.ResourceNotFoundException;
+import com.devjoliveira.swmdb.dto.CustomError;
+import com.devjoliveira.swmdb.services.exceptions.ResourceNotFoundException;
 
 import jakarta.servlet.http.HttpServletRequest;
 

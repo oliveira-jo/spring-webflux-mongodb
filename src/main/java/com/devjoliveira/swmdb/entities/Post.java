@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.entities;
+package com.devjoliveira.swmdb.entities;
 
 import java.time.Instant;
 import java.util.ArrayList;

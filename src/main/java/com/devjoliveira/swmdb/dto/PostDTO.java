@@ -1,10 +1,10 @@
-package com.devjoliveira.workshopmongo.dto;
+package com.devjoliveira.swmdb.dto;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.devjoliveira.workshopmongo.entities.Post;
+import com.devjoliveira.swmdb.entities.Post;
 
 public class PostDTO {
 

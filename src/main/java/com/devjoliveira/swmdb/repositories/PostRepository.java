@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.repositories;
+package com.devjoliveira.swmdb.repositories;
 
 import java.time.Instant;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.devjoliveira.workshopmongo.entities.Post;
+import com.devjoliveira.swmdb.entities.Post;
 
 public interface PostRepository extends MongoRepository<Post, String> {
 

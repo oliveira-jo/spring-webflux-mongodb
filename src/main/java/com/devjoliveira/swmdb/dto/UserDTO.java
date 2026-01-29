@@ -1,6 +1,6 @@
-package com.devjoliveira.workshopmongo.dto;
+package com.devjoliveira.swmdb.dto;
 
-import com.devjoliveira.workshopmongo.entities.User;
+import com.devjoliveira.swmdb.entities.User;
 
 public class UserDTO {
 

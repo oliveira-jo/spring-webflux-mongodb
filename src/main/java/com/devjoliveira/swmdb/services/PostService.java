@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo.services;
+package com.devjoliveira.swmdb.services;
 
 import java.time.Instant;
 import java.util.List;
@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devjoliveira.workshopmongo.dto.PostDTO;
-import com.devjoliveira.workshopmongo.entities.Post;
-import com.devjoliveira.workshopmongo.repositories.PostRepository;
-import com.devjoliveira.workshopmongo.services.exceptions.ResourceNotFoundException;
+import com.devjoliveira.swmdb.dto.PostDTO;
+import com.devjoliveira.swmdb.entities.Post;
+import com.devjoliveira.swmdb.repositories.PostRepository;
+import com.devjoliveira.swmdb.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class PostService {
