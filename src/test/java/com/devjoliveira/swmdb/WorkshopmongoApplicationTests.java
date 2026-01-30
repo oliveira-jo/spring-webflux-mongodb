@@ -1,4 +1,4 @@
-package com.devjoliveira.workshopmongo;
+package com.devjoliveira.swmdb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

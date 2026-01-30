@@ -1,10 +1,10 @@
 package com.devjoliveira.swmdb.controllers;
 
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
 import java.time.Instant;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import java.text.ParseException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -52,5 +52,10 @@ public class PostController {
 
 		Flux<PostDTO> list = service.fullSearch(text, min, max);
 		return ResponseEntity.ok().body(list);
+	}
+
+	@GetMapping(value = "/user/{id}")
+	public ResponseEntity<Flux<PostDTO>> findByUser(@PathVariable String id) {
+		return ResponseEntity.ok().body(service.findByUser(id));
 	}
 }

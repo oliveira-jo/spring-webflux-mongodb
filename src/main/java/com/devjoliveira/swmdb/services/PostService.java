@@ -1,6 +1,8 @@
 package com.devjoliveira.swmdb.services;
 
 import java.time.Instant;
+
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,11 @@ public class PostService {
 		Flux<PostDTO> result = repository.fullSearch(text, minDate,
 				maxDate).map(x -> new PostDTO(x));
 		return result;
+	}
+
+	public Flux<PostDTO> findByUser(String id) {
+		return repository.findByUser(new ObjectId(id))
+				.map(post -> new PostDTO(post));
 	}
 
 }
