@@ -36,12 +36,6 @@ public class UserController {
 		return service.findById(id).map(userDTO -> ResponseEntity.ok().body(userDTO));
 	}
 
-	// @GetMapping(value = "/{id}/posts")
-	// public ResponseEntity<List<PostDTO>> findPosts(@PathVariable String id) {
-	// List<PostDTO> list = service.findPosts(id);
-	// return ResponseEntity.ok().body(list);
-	// }
-
 	@PostMapping
 	public Mono<ResponseEntity<UserDTO>> insert(@RequestBody UserDTO dto, UriComponentsBuilder uriBuilder) {
 		return service.insert(dto).map(userCreated -> ResponseEntity
