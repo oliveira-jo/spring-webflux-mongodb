@@ -17,6 +17,8 @@ import com.devjoliveira.swmdb.controllers.util.URL;
 import com.devjoliveira.swmdb.dto.PostDTO;
 import com.devjoliveira.swmdb.services.PostService;
 
+import reactor.core.publisher.Mono;
+
 @RestController
 @RequestMapping(value = "/posts")
 public class PostController {
@@ -24,11 +26,10 @@ public class PostController {
 	@Autowired
 	private PostService service;
 
-	// @GetMapping(value = "/{id}")
-	// public ResponseEntity<PostDTO> findById(@PathVariable String id) {
-	// PostDTO dto = service.findById(id);
-	// return ResponseEntity.ok(dto);
-	// }
+	@GetMapping(value = "/{id}")
+	public Mono<ResponseEntity<PostDTO>> findById(@PathVariable String id) {
+		return service.findById(id).map(postDTO -> ResponseEntity.ok().body(postDTO));
+	}
 
 	// @GetMapping(value = "/titlesearch")
 	// public ResponseEntity<List<PostDTO>> findByTitle(@RequestParam(value =
