@@ -1,9 +1,6 @@
 package com.devjoliveira.swmdb.controllers;
 
 import java.io.UnsupportedEncodingException;
-import java.text.ParseException;
-import java.time.Instant;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +14,7 @@ import com.devjoliveira.swmdb.controllers.util.URL;
 import com.devjoliveira.swmdb.dto.PostDTO;
 import com.devjoliveira.swmdb.services.PostService;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -31,14 +29,13 @@ public class PostController {
 		return service.findById(id).map(postDTO -> ResponseEntity.ok().body(postDTO));
 	}
 
-	// @GetMapping(value = "/titlesearch")
-	// public ResponseEntity<List<PostDTO>> findByTitle(@RequestParam(value =
-	// "text", defaultValue = "") String text)
-	// throws UnsupportedEncodingException {
-	// text = URL.decodeParam(text);
-	// List<PostDTO> list = service.findByTitle(text);
-	// return ResponseEntity.ok(list);
-	// }
+	@GetMapping(value = "/titlesearch")
+	public ResponseEntity<Flux<PostDTO>> findByTitle(@RequestParam(value = "text", defaultValue = "") String text)
+			throws UnsupportedEncodingException {
+		text = URL.decodeParam(text);
+		Flux<PostDTO> list = service.findByTitle(text);
+		return ResponseEntity.ok().body(list);
+	}
 
 	// @GetMapping(value = "/fullsearch")
 	// public ResponseEntity<List<PostDTO>> fullSearch(
