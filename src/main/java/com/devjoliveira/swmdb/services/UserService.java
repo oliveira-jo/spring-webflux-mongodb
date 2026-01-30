@@ -39,13 +39,12 @@ public class UserService {
 	// return result;
 	// }
 
-	// @Transactional
-	// public UserDTO insert(UserDTO dto) {
-	// User entity = new User();
-	// copyDtoToEntity(dto, entity);
-	// entity = repository.save(entity);
-	// return new UserDTO(entity);
-	// }
+	public Mono<UserDTO> insert(UserDTO dto) {
+		User entity = new User();
+		copyDtoToEntity(dto, entity);
+		Mono<UserDTO> result = repository.save(entity).map(user -> new UserDTO(user));
+		return result;
+	}
 
 	// @Transactional
 	// public UserDTO update(String id, UserDTO dto) {
@@ -63,8 +62,8 @@ public class UserService {
 	// repository.delete(entity);
 	// }
 
-	// private void copyDtoToEntity(UserDTO dto, User entity) {
-	// entity.setName(dto.getName());
-	// entity.setEmail(dto.getEmail());
-	// }
+	private void copyDtoToEntity(UserDTO dto, User entity) {
+		entity.setName(dto.getName());
+		entity.setEmail(dto.getEmail());
+	}
 }
