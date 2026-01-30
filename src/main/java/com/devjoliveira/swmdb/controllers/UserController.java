@@ -1,8 +1,5 @@
 package com.devjoliveira.swmdb.controllers;
 
-import java.net.URI;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.devjoliveira.swmdb.dto.PostDTO;
 import com.devjoliveira.swmdb.dto.UserDTO;
 import com.devjoliveira.swmdb.services.UserService;
 
@@ -59,9 +55,8 @@ public class UserController {
 		return service.update(id, dto).map(userUpdated -> ResponseEntity.ok().body(userUpdated));
 	}
 
-	// @DeleteMapping(value = "/{id}")
-	// public ResponseEntity<Void> delete(@PathVariable String id) {
-	// service.delete(id);
-	// return ResponseEntity.noContent().build();
-	// }
+	@DeleteMapping(value = "/{id}")
+	public Mono<ResponseEntity<Void>> delete(@PathVariable String id) {
+		return service.delete(id).then(Mono.just(ResponseEntity.noContent().<Void>build()));
+	}
 }
