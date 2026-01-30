@@ -12,25 +12,23 @@ import com.devjoliveira.swmdb.entities.User;
 import com.devjoliveira.swmdb.repositories.UserRepository;
 import com.devjoliveira.swmdb.services.exceptions.ResourceNotFoundException;
 
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 @Service
 public class UserService {
 
 	@Autowired
 	private UserRepository repository;
 
-	// @Transactional(readOnly = true)
-	// public List<UserDTO> findAll() {
-	// List<UserDTO> result = repository.findAll().stream().map(x -> new
-	// UserDTO(x)).toList();
-	// return result;
-	// }
+	public Flux<UserDTO> findAll() {
+		return repository.findAll().map(x -> new UserDTO(x));
+	}
 
-	// @Transactional(readOnly = true)
-	// public UserDTO findById(String id) {
-	// User user = repository.findById(id).orElseThrow(() -> new
-	// ResourceNotFoundException("Recurso não encontrado"));
-	// return new UserDTO(user);
-	// }
+	public Mono<UserDTO> findById(String id) {
+		return repository.findById(id).map(x -> new UserDTO(x))
+				.switchIfEmpty(Mono.error(new ResourceNotFoundException("Recurso não encontrado")));
+	}
 
 	// @Transactional(readOnly = true)
 	// public List<PostDTO> findPosts(String id) {
